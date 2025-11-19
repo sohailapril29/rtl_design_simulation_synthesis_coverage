@@ -158,15 +158,15 @@ To do coverage we dont use verilog we use SystemVerilog so remove tb_fa.v from t
 ```
     vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond
 ```
-if your have fsm and branch type below command 
-```
-    vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond+fsm+branch
-```
+
 ```
     ./simv -cm line+tgl+cond
 ```
-if your have fsm and branch type below command 
 
+if your have fsm and branch type below commands
+```
+    vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond+fsm+branch
+``
 ```
     ./simv -cm line+tgl+cond+fsm+branch
 ```
