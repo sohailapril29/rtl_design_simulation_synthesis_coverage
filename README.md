@@ -4,8 +4,7 @@
 
     source /home/Admin/mjcet
 
-## 3. Create the  Directory called full_adder
-## 4. Create the Standard Directory Structure In The Folder Which You Created Which is full_adder And Inside That Make Three Folders
+## 3. Create the Standard Directory Structure In The Folder Which You Created Which is full_adder And Inside That Make Three Folders
 
     rtl
     tb
