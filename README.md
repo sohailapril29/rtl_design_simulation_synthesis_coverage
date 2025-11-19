@@ -47,7 +47,7 @@ In tb folder create tb_fa.v file and paste the below code
     endmodule
 
 # SIMULATION
-
+now open termianl and navigate to sim folder which you created and type below command 
 ```
 vcs ../rtl/fa.v ../tb/tb_fa.v -lca -kdb -debug_access+all -full64
 ```
