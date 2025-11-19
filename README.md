@@ -49,15 +49,15 @@ In tb folder create tb_fa.v file and paste the below code
 # SIMULATION
 
 ```
-    vcs ../rtl/fa.v ../tb/tb_fa.v -lca -kdb -debug_access+all -full64
+vcs ../rtl/fa.v ../tb/tb_fa.v -lca -kdb -debug_access+all -full64
 ```
 
 ```
-    ./simv
+./simv
 ```
 
 ```
-    ./simv - verdi &
+./simv - verdi &
 ```
 # SYNTHESIS (Synopsys DC)
 
@@ -66,53 +66,53 @@ In tb folder create tb_fa.v file and paste the below code
 ## Run DC
 To invoke the tool type the below command 
 ```
-    dc_shell
+dc_shell
 ```
 ```
-    source -echo -verbose ./rm_setup/dc_setup.tcl
+source -echo -verbose ./rm_setup/dc_setup.tcl
 ```
 ```
-    set RTL_SOURCE_FILES ./../rtl/fa.v
+set RTL_SOURCE_FILES ./../rtl/fa.v
 ```
 ```
-    define_design_lib WORK -path ./WORK
+define_design_lib WORK -path ./WORK
 ```
 ```
-    analyze -format verilog ${RTL_SOURCE_FILES}
+analyze -format verilog ${RTL_SOURCE_FILES}
 ```
 ```
-    start_gui
+start_gui
 ```
 ```
-    elaborate ${DESIGN_NAME}
+elaborate ${DESIGN_NAME}
 ```
 ```
-    read_sdc ./../CONSTRAINTS/fa.sdc
+read_sdc ./../CONSTRAINTS/fa.sdc
 ```
 ```
-    get_ports
+get_ports
 ```
 ```
-    change_selection [get_ports]
+change_selection [get_ports]
 ```
 ```
-    get_lib
+get_lib
 ```
 ```
 compile
 ```
 you can either use compile or compile_ultra command 
 ```
-    compile_ultra
+compile_ultra
 ```
 ```
-    report_cells
+report_cells
 ```
 ```
-    report_timing
+report_timing
 ```
 ```
-    write -format verilog -hierarchy -output ${RESULTS_DIR}/${DCRM_FINAL_VERILOG_OUTPUT_FILE}
+write -format verilog -hierarchy -output ${RESULTS_DIR}/${DCRM_FINAL_VERILOG_OUTPUT_FILE}
 ```
 
 # COVERAGE 
@@ -156,21 +156,22 @@ To do coverage we dont use verilog we use SystemVerilog so remove tb_fa.v from t
 
 # COVERAGE COMMANDS
 ```
-    vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond
+vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond
 ```
 
 ```
-    ./simv -cm line+tgl+cond
+./simv -cm line+tgl+cond
 ```
 
 if your have fsm and branch type below commands
 ```
-    vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond+fsm+branch
-``
-```
-    ./simv -cm line+tgl+cond+fsm+branch
+vcs ../rtl/fa.v ../tb/tb_fa.sv -cm line+tgl+cond+fsm+branch
 ```
 
+```
+./simv -cm line+tgl+cond+fsm+branch
+
+```
 # POST-PROCESSING (URG)
 
 ```
@@ -180,9 +181,11 @@ urg -dir simv.vdb
 verdi -cov -covdir simv.vdb
 ```
 if you want report in both text and html type below command
+
 ```
 urg -dir simv.vdb -format both
 ```
+
 if you want report with custom folder name  type below command
 
 ```
