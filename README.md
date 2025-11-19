@@ -49,13 +49,11 @@ In tb folder create tb_fa.v file and paste the below code
 # SIMULATION
 
 ```
-
     vcs ../rtl/fa.v ../tb/tb_fa.v -lca -kdb -debug_access+all -full64
 ```
 
 ```
     ./simv
-
 ```
 
 ```
